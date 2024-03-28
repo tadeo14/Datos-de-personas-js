@@ -39,17 +39,27 @@ class Persona  {
             console.log('La persona es menor de edad')
         }
     }
-    // mostrarDatos(){
-
-    // }
+    mostrarDatos(){
+        return {
+            nombre: this.nombre,
+            DNI: this.DNI,
+            sexo: this.sexo,
+            peso: this.peso,
+            altura: this.altura,
+            año: this.año,
+            edad: this.comprobarEdad(),
+            generacion: this.mostrarGeneracion()
+            
+        }
+    }
 
 
 
 }
 
 
-const usuarioPersona = new Persona('Ariel', '12345678A', 'M', 70, 170, 2015);
+const usuarioPersona = new Persona('Ariel', '12345678A', 'M', 70, 170, 1999);
 usuarioPersona.mostrarGeneracion();
 //console.log(usuarioPersona.mostrarDatos()); 
 usuarioPersona.comprobarEdad();
- 
+usuarioPersona.mostrarDatos();
