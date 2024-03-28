@@ -13,6 +13,7 @@ class Persona  {
         this.peso = peso;
         this.altura = altura;
         this.año = año;
+        this.edad = this.calcularEdad();
     }
     mostrarGeneracion(){
         if (1994 < this.año && this.año <= 2010) {
@@ -30,27 +31,25 @@ class Persona  {
         
         }
     }  
-    comprobarEdad() {
+    calcularEdad() {
         const añoActual = new Date().getFullYear();
-        const edad= añoActual - this.año;
-        if (edad >= 18) {
-            console.log ('La persona es mayor de edad');
-        }else{
-            console.log('La persona es menor de edad')
+        return añoActual - this.año;
+    }
+    comprobarEdad() {
+        if (this.edad >= 18) {
+            console.log('La persona es mayor de edad');
+        } else {
+            console.log('La persona es menor de edad');
         }
     }
     mostrarDatos(){
-        return {
-            nombre: this.nombre,
-            DNI: this.DNI,
-            sexo: this.sexo,
-            peso: this.peso,
-            altura: this.altura,
-            año: this.año,
-            edad: this.comprobarEdad(),
-            generacion: this.mostrarGeneracion()
-            
-        }
+        console.log(
+            `Datos:
+            Nombre: ${this.nombre}
+            Edad: ${this.edad}
+            DNI: ${this.DNI}
+            Sexo:  ${this.sexo}
+            `);
     }
 
 
